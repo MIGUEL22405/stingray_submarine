@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<package format="3">
+  <name>submarino_description</name>
+  <version>0.0.1</version>
+  <description>URDF y launch para submarino con 6 rotores</description>
+  <maintainer email="you@example.com">tu nombre</maintainer>
+  <license>Apache-2.0</license>
+
+  <buildtool_depend>ament_cmake</buildtool_depend>
+  <depend>rclcpp</depend>
+  <depend>robot_state_publisher</depend>
+  <depend>rviz2</depend>
+  
+  <!-- Dependencias CORRECTAS para ROS 2 Jazzy -->
+  <depend>ros_gz_sim</depend>
+
+  <export>
+    <build_type>ament_cmake</build_type>
+  </export>
+</package>

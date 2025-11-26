@@ -1,0 +1,201 @@
+<?xml version="1.0" encoding="utf-8"?>
+<robot name="montaje_dron">
+
+  <!-- =============================== -->
+  <!--             BASE LINK           -->
+  <!-- =============================== -->
+  <link name="base_link">
+    <inertial>
+      <origin xyz="5.30023478169123E-06 0.0448949961299249 -0.0105303143392795" rpy="0 0 0"/>
+      <mass value="2.89600521565433"/>
+      <inertia ixx="0.0361492183812078" ixy="-5.4147606777365E-09" ixz="-2.07470506385312E-06"
+               iyy="0.0458775178263102" iyz="-5.49361207886179E-08" izz="0.0208651487829676"/>
+    </inertial>
+
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="package://submarino_description/meshes/base_link.STL"/>
+      </geometry>
+    </visual>
+
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="package://submarino_description/meshes/base_link.STL"/>
+      </geometry>
+    </collision>
+  </link>
+
+  <!-- ==================================== -->
+  <!-- ROTOR LINKS + FIXED JOINT CORRECTION -->
+  <!-- ==================================== -->
+
+  <link name="rotor1_Link">
+    <inertial>
+      <origin xyz="0.000262517573858145 -0.0098800076471903 2.63129545481355E-05" rpy="0 0 0"/>
+      <mass value="0.349932700071159"/>
+      <inertia ixx="0.000201936243813789" ixy="1.63773735366465E-07" ixz="-6.79412864605983E-08"
+               iyy="0.00029979339393734" iyz="-1.20086492235577E-07" izz="0.000205978034489854"/>
+    </inertial>
+
+    <visual>
+      <geometry>
+        <mesh filename="package://submarino_description/meshes/rotor1_Link.STL"/>
+      </geometry>
+    </visual>
+
+    <collision>
+      <geometry>
+        <mesh filename="package://submarino_description/meshes/rotor1_Link.STL"/>
+      </geometry>
+    </collision>
+  </link>
+
+  <joint name="rotor1_joint" type="fixed">
+    <origin xyz="-0.1565 -0.031001 -0.16" rpy="0 0 0"/>
+    <parent link="base_link"/>
+    <child link="rotor1_Link"/>
+  </joint>
+
+  <!-- ROTOR 2 -->
+  <link name="rotor2_Link">
+    <inertial>
+      <origin xyz="2.63133773745761E-05 0.000262518672115006 -0.0112347553756556" rpy="0 0 0"/>
+      <mass value="0.349932673567963"/>
+      <inertia ixx="0.000205978021691313" ixy="-6.79388720621898E-08" ixz="-1.20082328110308E-07"
+               iyy="0.000201936233072525" iyz="1.63780303049496E-07" izz="0.000299793388527502"/>
+    </inertial>
+
+    <visual>
+      <geometry>
+        <mesh filename="package://submarino_description/meshes/rotor2_Link.STL"/>
+      </geometry>
+    </visual>
+
+    <collision>
+      <geometry>
+        <mesh filename="package://submarino_description/meshes/rotor2_Link.STL"/>
+      </geometry>
+    </collision>
+  </link>
+
+  <joint name="rotor2_joint" type="fixed">
+    <origin xyz="-0.19863 0.055704 0.001269" rpy="0 0 0"/>
+    <parent link="base_link"/>
+    <child link="rotor2_Link"/>
+  </joint>
+
+  <!-- ROTOR 3 -->
+  <link name="rotor3_Link">
+    <inertial>
+      <origin xyz="0.000262517571856524 -0.0147560508390667 2.63129646534965E-05" rpy="0 0 0"/>
+      <mass value="0.349932703023194"/>
+      <inertia ixx="0.000201936245510767" ixy="1.63773734823065E-07" ixz="-6.7941290998439E-08"
+               iyy="0.000299793397139071" iyz="-1.20086554912232E-07" izz="0.000205978036251105"/>
+    </inertial>
+
+    <visual>
+      <geometry>
+        <mesh filename="package://submarino_description/meshes/rotor3_Link.STL"/>
+      </geometry>
+    </visual>
+
+    <collision>
+      <geometry>
+        <mesh filename="package://submarino_description/meshes/rotor3_Link.STL"/>
+      </geometry>
+    </collision>
+  </link>
+
+  <joint name="rotor3_joint" type="fixed">
+    <origin xyz="-0.1565 -0.026125 0.16" rpy="0 0 0"/>
+    <parent link="base_link"/>
+    <child link="rotor3_Link"/>
+  </joint>
+
+  <!-- ROTOR 4 -->
+  <link name="rotor4_Link">
+    <inertial>
+      <origin xyz="-0.00026251757636761 -0.0112347576750203 -2.63130260751976E-05" rpy="0 0 0"/>
+      <mass value="0.34993270087619"/>
+      <inertia ixx="0.000201936244797305" ixy="-1.63773735571346E-07" ixz="-6.79413262504527E-08"
+               iyy="0.000299793394754292" iyz="1.20086545102204E-07" izz="0.000205978034577905"/>
+    </inertial>
+
+    <visual>
+      <geometry>
+        <mesh filename="package://submarino_description/meshes/rotor4_Link.STL"/>
+      </geometry>
+    </visual>
+
+    <collision>
+      <geometry>
+        <mesh filename="package://submarino_description/meshes/rotor4_Link.STL"/>
+      </geometry>
+    </collision>
+  </link>
+
+  <joint name="rotor4_joint" type="fixed">
+    <origin xyz="0.1565 -0.029646 -0.16" rpy="0 0 0"/>
+    <parent link="base_link"/>
+    <child link="rotor4_Link"/>
+  </joint>
+
+  <!-- ROTOR 5 -->
+  <link name="rotor5_Link">
+    <inertial>
+      <origin xyz="2.63133773369117E-05 0.000262518672448449 -0.0147560484649656" rpy="0 0 0"/>
+      <mass value="0.349932673568499"/>
+      <inertia ixx="0.000205978021946743" ixy="-6.7938873860106E-08" ixz="-1.2008232810564E-07"
+               iyy="0.000201936233073474" iyz="1.63780298612126E-07" izz="0.000299793388782921"/>
+    </inertial>
+
+    <visual>
+      <geometry>
+        <mesh filename="package://submarino_description/meshes/rotor5_Link.STL"/>
+      </geometry>
+    </visual>
+
+    <collision>
+      <geometry>
+        <mesh filename="package://submarino_description/meshes/rotor5_Link.STL"/>
+      </geometry>
+    </collision>
+  </link>
+
+  <joint name="rotor5_joint" type="fixed">
+    <origin xyz="0.19863 0.055704 0.0047903" rpy="0 0 0"/>
+    <parent link="base_link"/>
+    <child link="rotor5_Link"/>
+  </joint>
+
+  <!-- ROTOR 6 -->
+  <link name="rotor6_Link">
+    <inertial>
+      <origin xyz="-0.000262517569168536 0.00512069923735661 -2.63128932761481E-05" rpy="0 0 0"/>
+      <mass value="0.349932702219988"/>
+      <inertia ixx="0.000201936244528977" ixy="-1.63773735309342E-07" ixz="-6.79412541387303E-08"
+               iyy="0.000299793396580622" iyz="1.2008650282632E-07" izz="0.000205978036420638"/>
+    </inertial>
+
+    <visual>
+      <geometry>
+        <mesh filename="package://submarino_description/meshes/rotor6_Link.STL"/>
+      </geometry>
+    </visual>
+
+    <collision>
+      <geometry>
+        <mesh filename="package://submarino_description/meshes/rotor6_Link.STL"/>
+      </geometry>
+    </collision>
+  </link>
+
+  <joint name="rotor6_joint" type="fixed">
+    <origin xyz="0.1565 -0.046001 0.16" rpy="0 0 0"/>
+    <parent link="base_link"/>
+    <child link="rotor6_Link"/>
+  </joint>
+
+</robot>

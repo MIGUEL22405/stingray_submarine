@@ -1,0 +1,370 @@
+<sdf version='1.11'>
+  <model name='montaje_dron'>
+    <link name='base_link'>
+      <inertial>
+        <pose>5.3002347816912301e-06 0.044894996129924897 -0.010530314339279499 0 0 0</pose>
+        <mass>2.8960052156543301</mass>
+        <inertia>
+          <ixx>0.036149218381207798</ixx>
+          <ixy>-5.4147606777364998e-09</ixy>
+          <ixz>-2.0747050638531198e-06</ixz>
+          <iyy>0.0458775178263102</iyy>
+          <iyz>-5.4936120788617897e-08</iyz>
+          <izz>0.020865148782967601</izz>
+        </inertia>
+      </inertial>
+      <collision name='base_link_collision'>
+        <pose>0 0 0 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://montaje_dron/meshes/base_link.STL</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name='base_link_visual'>
+        <pose>0 0 0 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://montaje_dron/meshes/base_link.STL</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <diffuse>0 0.24509804 0.495098054 1</diffuse>
+          <ambient>0 0.24509804 0.495098054 1</ambient>
+        </material>
+      </visual>
+    </link>
+    <joint name='rotor1_joint' type='revolute'>
+      <pose relative_to='base_link'>-0.1565 -0.031001000000000001 -0.16 0 0 0</pose>
+      <parent>base_link</parent>
+      <child>rotor1_Link</child>
+      <axis>
+        <xyz>0 1 0</xyz>
+        <limit>
+          <lower>0</lower>
+          <upper>0</upper>
+          <effort>0</effort>
+          <velocity>0</velocity>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+      </axis>
+    </joint>
+    <link name='rotor1_Link'>
+      <pose relative_to='rotor1_joint'>0 0 0 0 0 0</pose>
+      <inertial>
+        <pose>0.00026251757385814501 -0.0098800076471902993 2.6312954548135499e-05 0 0 0</pose>
+        <mass>0.34993270007115901</mass>
+        <inertia>
+          <ixx>0.00020193624381378901</ixx>
+          <ixy>1.6377373536646501e-07</ixy>
+          <ixz>-6.7941286460598297e-08</ixz>
+          <iyy>0.00029979339393734002</iyy>
+          <iyz>-1.2008649223557701e-07</iyz>
+          <izz>0.00020597803448985401</izz>
+        </inertia>
+      </inertial>
+      <collision name='rotor1_Link_collision'>
+        <pose>0 0 0 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://montaje_dron/meshes/rotor1_Link.STL</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name='rotor1_Link_visual'>
+        <pose>0 0 0 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://montaje_dron/meshes/rotor1_Link.STL</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <diffuse>0.990196109 1 1 1</diffuse>
+          <ambient>0.990196109 1 1 1</ambient>
+        </material>
+      </visual>
+    </link>
+    <joint name='rotor2_joint' type='revolute'>
+      <pose relative_to='base_link'>-0.19863 0.055703999999999997 0.0012689999999999999 0 0 0</pose>
+      <parent>base_link</parent>
+      <child>rotor2_Link</child>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <limit>
+          <lower>0</lower>
+          <upper>0</upper>
+          <effort>0</effort>
+          <velocity>0</velocity>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+      </axis>
+    </joint>
+    <link name='rotor2_Link'>
+      <pose relative_to='rotor2_joint'>0 0 0 0 0 0</pose>
+      <inertial>
+        <pose>2.6313377374576101e-05 0.00026251867211500601 -0.011234755375655599 0 0 0</pose>
+        <mass>0.34993267356796298</mass>
+        <inertia>
+          <ixx>0.000205978021691313</ixx>
+          <ixy>-6.7938872062189804e-08</ixy>
+          <ixz>-1.2008232811030799e-07</ixz>
+          <iyy>0.00020193623307252501</iyy>
+          <iyz>1.6378030304949599e-07</iyz>
+          <izz>0.00029979338852750202</izz>
+        </inertia>
+      </inertial>
+      <collision name='rotor2_Link_collision'>
+        <pose>0 0 0 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://montaje_dron/meshes/rotor2_Link.STL</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name='rotor2_Link_visual'>
+        <pose>0 0 0 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://montaje_dron/meshes/rotor2_Link.STL</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <diffuse>0.990196109 1 1 1</diffuse>
+          <ambient>0.990196109 1 1 1</ambient>
+        </material>
+      </visual>
+    </link>
+    <joint name='rotor3_joint' type='revolute'>
+      <pose relative_to='base_link'>-0.1565 -0.026124999999999999 0.16 0 0 0</pose>
+      <parent>base_link</parent>
+      <child>rotor3_Link</child>
+      <axis>
+        <xyz>0 1 0</xyz>
+        <limit>
+          <lower>0</lower>
+          <upper>0</upper>
+          <effort>0</effort>
+          <velocity>0</velocity>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+      </axis>
+    </joint>
+    <link name='rotor3_Link'>
+      <pose relative_to='rotor3_joint'>0 0 0 0 0 0</pose>
+      <inertial>
+        <pose>0.00026251757185652397 -0.0147560508390667 2.6312964653496498e-05 0 0 0</pose>
+        <mass>0.34993270302319401</mass>
+        <inertia>
+          <ixx>0.00020193624551076699</ixx>
+          <ixy>1.6377373482306499e-07</ixy>
+          <ixz>-6.7941290998438994e-08</ixz>
+          <iyy>0.000299793397139071</iyy>
+          <iyz>-1.2008655491223199e-07</iyz>
+          <izz>0.00020597803625110501</izz>
+        </inertia>
+      </inertial>
+      <collision name='rotor3_Link_collision'>
+        <pose>0 0 0 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://montaje_dron/meshes/rotor3_Link.STL</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name='rotor3_Link_visual'>
+        <pose>0 0 0 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://montaje_dron/meshes/rotor3_Link.STL</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <diffuse>0.990196109 1 1 1</diffuse>
+          <ambient>0.990196109 1 1 1</ambient>
+        </material>
+      </visual>
+    </link>
+    <joint name='rotor4_joint' type='revolute'>
+      <pose relative_to='base_link'>0.1565 -0.029645999999999999 -0.16 0 0 0</pose>
+      <parent>base_link</parent>
+      <child>rotor4_Link</child>
+      <axis>
+        <xyz>0 1 0</xyz>
+        <limit>
+          <lower>0</lower>
+          <upper>0</upper>
+          <effort>0</effort>
+          <velocity>0</velocity>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+      </axis>
+    </joint>
+    <link name='rotor4_Link'>
+      <pose relative_to='rotor4_joint'>0 0 0 0 0 0</pose>
+      <inertial>
+        <pose>-0.00026251757636760998 -0.0112347576750203 -2.6313026075197601e-05 0 0 0</pose>
+        <mass>0.34993270087618999</mass>
+        <inertia>
+          <ixx>0.00020193624479730501</ixx>
+          <ixy>-1.63773735571346e-07</ixy>
+          <ixz>-6.7941326250452704e-08</ixz>
+          <iyy>0.00029979339475429199</iyy>
+          <iyz>1.20086545102204e-07</iyz>
+          <izz>0.00020597803457790499</izz>
+        </inertia>
+      </inertial>
+      <collision name='rotor4_Link_collision'>
+        <pose>0 0 0 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://montaje_dron/meshes/rotor4_Link.STL</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name='rotor4_Link_visual'>
+        <pose>0 0 0 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://montaje_dron/meshes/rotor4_Link.STL</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <diffuse>0.990196109 1 1 1</diffuse>
+          <ambient>0.990196109 1 1 1</ambient>
+        </material>
+      </visual>
+    </link>
+    <joint name='rotor5_joint' type='revolute'>
+      <pose relative_to='base_link'>0.19863 0.055703999999999997 0.0047902999999999999 0 0 0</pose>
+      <parent>base_link</parent>
+      <child>rotor5_Link</child>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <limit>
+          <lower>0</lower>
+          <upper>0</upper>
+          <effort>0</effort>
+          <velocity>0</velocity>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+      </axis>
+    </joint>
+    <link name='rotor5_Link'>
+      <pose relative_to='rotor5_joint'>0 0 0 0 0 0</pose>
+      <inertial>
+        <pose>2.63133773369117e-05 0.00026251867244844903 -0.0147560484649656 0 0 0</pose>
+        <mass>0.349932673568499</mass>
+        <inertia>
+          <ixx>0.00020597802194674301</ixx>
+          <ixy>-6.7938873860106e-08</ixy>
+          <ixz>-1.2008232810563999e-07</ixz>
+          <iyy>0.00020193623307347401</iyy>
+          <iyz>1.6378029861212601e-07</iyz>
+          <izz>0.00029979338878292103</izz>
+        </inertia>
+      </inertial>
+      <collision name='rotor5_Link_collision'>
+        <pose>0 0 0 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://montaje_dron/meshes/rotor5_Link.STL</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name='rotor5_Link_visual'>
+        <pose>0 0 0 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://montaje_dron/meshes/rotor5_Link.STL</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <diffuse>0.990196109 1 1 1</diffuse>
+          <ambient>0.990196109 1 1 1</ambient>
+        </material>
+      </visual>
+    </link>
+    <joint name='rotor6_joint' type='revolute'>
+      <pose relative_to='base_link'>0.1565 -0.046001 0.16 0 0 0</pose>
+      <parent>base_link</parent>
+      <child>rotor6_Link</child>
+      <axis>
+        <xyz>0 1 0</xyz>
+        <limit>
+          <lower>0</lower>
+          <upper>0</upper>
+          <effort>0</effort>
+          <velocity>0</velocity>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+      </axis>
+    </joint>
+    <link name='rotor6_Link'>
+      <pose relative_to='rotor6_joint'>0 0 0 0 0 0</pose>
+      <inertial>
+        <pose>-0.00026251756916853601 0.0051206992373566103 -2.63128932761481e-05 0 0 0</pose>
+        <mass>0.34993270221998801</mass>
+        <inertia>
+          <ixx>0.00020193624452897701</ixx>
+          <ixy>-1.63773735309342e-07</ixy>
+          <ixz>-6.7941254138730306e-08</ixz>
+          <iyy>0.00029979339658062199</iyy>
+          <iyz>1.2008650282632e-07</iyz>
+          <izz>0.00020597803642063799</izz>
+        </inertia>
+      </inertial>
+      <collision name='rotor6_Link_collision'>
+        <pose>0 0 0 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://montaje_dron/meshes/rotor6_Link.STL</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name='rotor6_Link_visual'>
+        <pose>0 0 0 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://montaje_dron/meshes/rotor6_Link.STL</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <diffuse>0.990196109 1 1 1</diffuse>
+          <ambient>0.990196109 1 1 1</ambient>
+        </material>
+      </visual>
+    </link>
+  </model>
+</sdf>
