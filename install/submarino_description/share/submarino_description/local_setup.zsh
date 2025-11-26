@@ -1,0 +1,1 @@
+/home/ras/submarinov1.3.6_ws/build/submarino_description/ament_cmake_environment_hooks/local_setup.zsh

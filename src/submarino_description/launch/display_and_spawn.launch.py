@@ -6,7 +6,7 @@ import os
 
 def generate_launch_description():
     pkg_share = get_package_share_directory('submarino_description')
-    urdf_file = os.path.join(pkg_share, 'urdf', 'montaje_dron.urdf')
+    urdf_file = os.path.join(pkg_share, 'urdf', 'montaje_dron_con_colores.urdf')
     
     # Cargar el contenido del URDF
     with open(urdf_file, 'r') as infp:
